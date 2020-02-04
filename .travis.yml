@@ -4,7 +4,6 @@ rvm:
  - java
 install:
  - mvn clean verify
-before_deploy:
  - docker-compose build
  - docker login -u $login -p $pwddock
  - docker tag sample-application-students_sampledb aguyot/sampledb
