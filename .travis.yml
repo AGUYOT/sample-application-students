@@ -1,5 +1,14 @@
 language: java
 
+install:
+ - mvn clean verify
+ - docker-compose build
+ - docker login -u $login -p $pwddock
+ - docker tag sample-application-students_sampledb aguyot/sampledb
+ - docker tag sample-application-students_samplehttp aguyot/samplehttp
+ - docker push aguyot/sampledb
+ - docker push aguyot/samplehttp
+
 addons:
   sonarcloud:
     organization: "aguyot"
@@ -9,12 +18,3 @@ addons:
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - sonar-scanner
-
-install:
- - mvn clean verify
- - docker-compose build
- - docker login -u $login -p $pwddock
- - docker tag sample-application-students_sampledb aguyot/sampledb
- - docker tag sample-application-students_samplehttp aguyot/samplehttp
- - docker push aguyot/sampledb
- - docker push aguyot/samplehttp
