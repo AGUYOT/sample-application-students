@@ -3,9 +3,10 @@ rvm:
  - 11
  - java
 install:
+ - mvn clean verify
  - docker-compose build
  - docker login -u $login -p $pwddock
  - docker tag sample-application-students_sampledb aguyot/sampledb
- - docker tag sample-application-studentssamplehttp aguyot/samplehttp
+ - docker tag sample-application-students_samplehttp aguyot/samplehttp
  - docker push aguyot/sampledb
  - docker push aguyot/samplehttp

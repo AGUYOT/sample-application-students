@@ -3,10 +3,10 @@ services:
   sampledb:
     container_name: sampledb
     build:
-      context: ./
-      dockerfile: db.Dockerfile
+      context: ./sample-application-db-changelog-job
+      dockerfile: Dockerfile
   samplehttp:
     container_name: samplehttp
     build:
-      context: ./
-      dockerfile: http.Dockerfile
+      context: ./sample-application-http-api-server
+      dockerfile: Dockerfile
