@@ -5,7 +5,7 @@ rvm:
 install:
  - docker-compose build
  - docker login -u $login -p $pwddock
- - docker tag sampledb aguyot/sampledb
- - docker tag samplehttp aguyot/samplehttp
+ - docker tag sample-application-students_sampledb aguyot/sampledb
+ - docker tag sample-application-studentssamplehttp aguyot/samplehttp
  - docker push aguyot/sampledb
  - docker push aguyot/samplehttp
