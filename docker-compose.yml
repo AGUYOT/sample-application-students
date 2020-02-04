@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  sampledb:
+    container_name: sampledb
+    build:
+      context: ./
+      dockerfile: db.Dockerfile
+  samplehttp:
+    container_name: samplehttp
+    build:
+      context: ./
+      dockerfile: http.Dockerfile
